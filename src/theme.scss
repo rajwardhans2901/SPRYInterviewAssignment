@@ -1,0 +1,62 @@
+@use '@angular/material' as mat;
+@include mat.core();
+
+
+.primary {
+
+    $blue-palette: mat.define-palette(mat.$blue-palette);
+    
+    $theme: mat.define-dark-theme((
+      color: (
+        primary: $blue-palette,
+        accent: $blue-palette,
+      ),
+     
+    ));
+    
+    $palette-color : map-get($theme, color);
+    $background: map-get($palette-color, background);
+    $background: map-merge($background, (background: white));
+    $palette-color: map-merge($palette-color, (background: $background));
+    $theme: map-merge($theme, (color: $palette-color));
+    
+    @include mat.all-component-themes($theme);
+}
+
+.alternative {
+    $green-palette: mat.define-palette(mat.$green-palette);
+
+    $theme: mat.define-dark-theme((
+      color: (
+        primary: $green-palette,
+        accent: $green-palette,
+      ),
+     
+    ));
+
+    $palette-color : map-get($theme, color);
+    $background: map-get($palette-color, background);
+    $background: map-merge($background, (background: rgb(221, 216, 216)));
+    $palette-color: map-merge($palette-color, (background: $background));
+    $theme: map-merge($theme, (color: $palette-color));
+    @include mat.all-component-themes($theme);
+}
+
+.third {
+  $red-palette: mat.define-palette(mat.$red-palette);
+
+  $theme: mat.define-dark-theme((
+    color: (
+      primary: $red-palette,
+      accent: $red-palette,
+    ),
+   
+  ));
+
+  $palette-color : map-get($theme, color);
+  $background: map-get($palette-color, background);
+  $background: map-merge($background, (background: beige));
+  $palette-color: map-merge($palette-color, (background: $background));
+  $theme: map-merge($theme, (color: $palette-color));
+  @include mat.all-component-themes($theme);
+}

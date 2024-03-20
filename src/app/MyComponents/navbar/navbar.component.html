@@ -1,0 +1,21 @@
+<mat-sidenav-container color="accent" id="navbarComponent">
+  <nav class="navbar navbar-expand-lg" id="topbar" color="primary">
+      <div class="container">
+        <a class="navbar-brand" href="#">Client Dashboard</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <button mat-button [matMenuTriggerFor]="menu">Select Client</button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click) = "changeTheme('client1')" value="client1">Client 1</button>
+          <button mat-menu-item (click) = "changeTheme('client2')" value="client2">Client 2</button>
+          <button mat-menu-item (click) = "changeTheme('client3')" value="client3">Client 2</button>
+        </mat-menu>
+      </div>
+        <div class="row">
+          <div class="col">
+        </div>
+      </div>
+    </nav>
+</mat-sidenav-container>
